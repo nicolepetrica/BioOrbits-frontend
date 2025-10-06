@@ -88,7 +88,7 @@ const FeaturesSection: React.FC = () => {
       content: (
         <FeaturePreview
           imageUrl="./insights.png"
-          linkUrl="/insights"
+          linkUrl="/BioOrbits-frontend/insights"
           linkText="View insights"
         />
       ),
@@ -100,7 +100,7 @@ const FeaturesSection: React.FC = () => {
       content: (
         <FeaturePreview
           imageUrl="./ask_ai.png"
-          linkUrl="/ask"
+          linkUrl="/BioOrbits-frontend/ask"
           linkText="Get recommendations"
         />
       ),
@@ -116,7 +116,7 @@ const FeaturesSection: React.FC = () => {
       content: (
         <FeaturePreview
           imageUrl="./saved_papers.png"
-          linkUrl="/saved"
+          linkUrl="/BioOrbits-frontend/saved"
           linkText="See all saved papers"
         />
       ),
@@ -132,7 +132,7 @@ const FeaturesSection: React.FC = () => {
       content: (
         <FeaturePreview
           imageUrl="./all_papers.png"
-          linkUrl="/all-papers"
+          linkUrl="/BioOrbits-frontend/all-papers"
           linkText="See all papers"
         />
       ),
