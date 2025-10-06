@@ -1,6 +1,7 @@
 // src/components/FeaturePreview.tsx
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 interface FeaturePreviewProps {
   imageUrl: string;
@@ -14,8 +15,8 @@ const FeaturePreview: React.FC<FeaturePreviewProps> = ({
   linkText = "go to page" 
 }) => {
   return (
-    <a 
-      href={linkUrl}
+    <Link
+      to={linkUrl}
       className="
         group relative block w-full h-48 md:h-64 
         overflow-hidden rounded-lg shadow-xl 
@@ -47,7 +48,7 @@ const FeaturePreview: React.FC<FeaturePreviewProps> = ({
           <ArrowRight className="size-4" />
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
