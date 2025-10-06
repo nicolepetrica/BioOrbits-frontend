@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import * as d3 from 'd3';
 import { loadPapers, type Paper } from '../lib/papers';
 import { useBookmarks } from '../hooks/useBookmarks';
+import { useNavigate } from 'react-router-dom';
 
 const COLORS = [
     '#FF6D00', '#FF7900', '#FF8500', '#FF9100', '#FF9E00',
@@ -119,6 +120,7 @@ const DetailsPopover = ({ data, onClose }: { data: PopoverData | null; onClose: 
     const popoverRef = useRef(null);
     const [popoverStyle, setPopoverStyle] = useState({});
     const { isBookmarked, toggle } = useBookmarks();
+    const navigate = useNavigate();
     const updatePosition = useCallback(() => {
         if (!data || !data.barElement) return;
         const barRect = data.barElement.getBoundingClientRect();
@@ -130,6 +132,12 @@ const DetailsPopover = ({ data, onClose }: { data: PopoverData | null; onClose: 
         };
         setPopoverStyle(style);
     }, [data]);
+
+     const handleAskAI = () => {
+        if (paper && paper.id) {
+            navigate(`/ask`);
+        }
+    };
 
     useEffect(() => {
         updatePosition(); // Initial position
@@ -193,14 +201,16 @@ const DetailsPopover = ({ data, onClose }: { data: PopoverData | null; onClose: 
                     <p className="flex-grow overflow-y-auto pr-2 border-t border-b border-gray-700 py-2 my-2 custom-scrollbar">{paper?.summary || "No summary available."}</p>
                     <div className="flex-shrink-0 flex items-center justify-end space-x-2 mt-2">
                         {paper && paper.id && (
+                            <>
                             <button
                                 onClick={handleToggleBookmark}
                                 className={isCurrentPaperBookmarked ? bookmarkedButtonStyle : buttonStyle}
                             >
                                 {isCurrentPaperBookmarked ? 'Bookmarked' : 'Bookmark'}
                             </button>
+                        <button onClick={handleAskAI} className={buttonStyle}>Ask AI</button>
+                            </>
                         )}
-                        <button onClick={() => alert('Ask AI clicked!')} className={buttonStyle}>Ask AI</button>
                     </div>
                 </div>
             )}
