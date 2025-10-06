@@ -132,7 +132,7 @@ const FeaturesSection: React.FC = () => {
       content: (
         <FeaturePreview
           imageUrl="./all_papers.png"
-          linkUrl="/all-papers"
+          linkUrl="/all"
           linkText="See all papers"
         />
       ),
