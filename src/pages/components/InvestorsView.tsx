@@ -18,7 +18,7 @@ type ProcessedData = {
   };
 };
 
-const PREDICTIONS_CSV_URL = '/arima_predictions_with_history.csv';
+const PREDICTIONS_CSV_URL = './arima_predictions_with_history.csv';
 
 const METRIC_DESCRIPTIONS: { [key: string]: string } = {
   'Altmetric Score': 'A weighted score that tracks the attention a research output has received online, including news, blogs, and social media.',
