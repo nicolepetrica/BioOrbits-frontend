@@ -102,7 +102,7 @@ export default function AskAI() {
   // Load CSV index once
   useEffect(() => {
     let mounted = true;
-    buildTitleToLinkIndex("/papers_enriched.csv")
+    buildTitleToLinkIndex("/BioOrbits-frontend/papers_enriched.csv")
       .then((idx) => { if (!mounted) return; titleToLinkRef.current = idx; setIndexReady(true); })
       .catch(() => setIndexReady(false));
     return () => { mounted = false; };
