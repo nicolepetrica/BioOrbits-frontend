@@ -34,7 +34,7 @@ const HeroBackground = () => {
       />
       {/* Jupiter SVG */}
       <div className="absolute bottom-[5%] right-[10%] h-64 w-64">
-        <img src="/jupiter.svg" alt="Decorative planet" className="h-full w-full" />
+        <img src="./jupiter.svg" alt="Decorative planet" className="h-full w-full" />
       </div>
     </div>
   );
